@@ -11,7 +11,7 @@ export function Home(){
     function handleAlunoAdd() {
         
         if (alunos.includes(nomeAluno)) {
-            return Alert.alert("Participante existe", "Já existe um participante na lista com esse nome.");
+            return Alert.alert("Alunos existe", "Já existe um alunos na lista com esse nome.");
           }
       
           setAlunos(prevState => [...prevState,nomeAluno]);
@@ -19,10 +19,11 @@ export function Home(){
     }
 
     function handleAlunoRemove(name) {
+        // return console.log(alunos.filter(aluno => aluno !== name))
         Alert.alert("Remover",`Remover o aluno(a) ${name}?`,[
             {
                 text: 'Sim',
-                onPress: () => setAlunos(prevState => prevState.filter(participant => participant !== name))
+                onPress: () => setAlunos(prevState => prevState.filter(aluno => aluno !== name))
             },
             {
                 text: 'Não',
